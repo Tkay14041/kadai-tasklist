@@ -3,6 +3,7 @@
 @section('content')
 
 <!-- Write content for each page here -->
+<?php $task = User::find($id); ?>
 @if (\Auth::id() === $task->user_id)
 	<h1>id = {{ $task->id }}のタスク編集ページ</h1>
 	<div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
