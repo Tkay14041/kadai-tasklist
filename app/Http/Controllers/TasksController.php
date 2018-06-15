@@ -17,10 +17,10 @@ class TasksController extends Controller
     {
         $data = [];
         if (\Auth::check()) {
-        var_dump('aaaa');
-        exit;
             $user = \Auth::user();
             $tasks = $user->tasks()->paginate(10);
+        var_dump('bbb');
+        exit;
             
             $data = [
                 'user' => $user,
