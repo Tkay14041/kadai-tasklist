@@ -19,8 +19,8 @@ class TasksController extends Controller
         if (\Auth::check()) {
             $user = \Auth::user();
             $tasks = $user->tasks()->paginate(10);
-        var_dump('bbb');
-        exit;
+        // var_dump('bbb');
+        // exit;
             
             $data = [
                 'user' => $user,
