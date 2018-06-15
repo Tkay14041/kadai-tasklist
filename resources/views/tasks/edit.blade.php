@@ -3,6 +3,7 @@
 @section('content')
 
 <!-- Write content for each page here -->
+@if (\Auth::id() === $task->user_id)
 	<h1>id = {{ $task->id }}のタスク編集ページ</h1>
 	<div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	{!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
@@ -18,4 +19,7 @@
 	
 	{!! Form::close() !!}
 	</div>
+@else
+	<h1>you can't edit this task</h1>
+@endif
 @endsection

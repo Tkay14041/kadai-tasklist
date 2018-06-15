@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTasksTables extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,13 @@ class CreateTasksTables extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
             $table->string('content');
             $table->timestamps();
+            $table->string('status', 10);
+            
+            // Foreign key constraint
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
