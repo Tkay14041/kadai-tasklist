@@ -19,14 +19,14 @@ class TasksController extends Controller
         if (\Auth::check()) {
             $user = \Auth::user();
             $tasks = $user->tasks()->paginate(10);
-        // var_dump('bbb');
-        // exit;
             
             $data = [
                 'user' => $user,
                 'tasks' => $tasks,
                 ];
             $data += $this->counts($user);
+         var_dump('bbb');
+         exit;
             return view('tasks.index', $data);
         } else {
             return view('tasks.index');
