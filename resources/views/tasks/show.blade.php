@@ -3,7 +3,8 @@
 @section('content')
 
 <!-- Write content for each page here -->
-@if (count($task) > 0)
+	@if (!is_null($task))
+{{-- @if (count($task) > 0) --}}
 	<h1>id = {{ $task->id }}のタスク詳細ページ</h1>
 	
 	<table class='table table-bordered'>
