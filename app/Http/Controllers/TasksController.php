@@ -15,6 +15,8 @@ class TasksController extends Controller
      */
     public function index()
     {
+        var_dump('aaaa');
+        exit;
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
