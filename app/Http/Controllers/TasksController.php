@@ -15,10 +15,10 @@ class TasksController extends Controller
      */
     public function index()
     {
-        var_dump('aaaa');
-        exit;
         $data = [];
         if (\Auth::check()) {
+        var_dump('aaaa');
+        exit;
             $user = \Auth::user();
             $tasks = $user->tasks()->paginate(10);
             
