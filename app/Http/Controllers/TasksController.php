@@ -25,8 +25,8 @@ class TasksController extends Controller
                 'tasks' => $tasks,
                 ];
             $data += $this->counts($user);
-         var_dump('bbb');
-         exit;
+         //var_dump('bbb');
+         //exit;
             return view('tasks.index', $data);
         } else {
             return view('tasks.index');
